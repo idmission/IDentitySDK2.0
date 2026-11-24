@@ -1,0 +1,8 @@
+# Gitleaks config: the default rules, plus reviewed false positives.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "TensorFlow Lite model files (.tflite) bundled by Google ML Kit: binary model weights whose random bytes match the GitHub token rules. Not secrets."
+targetRules = ["github-oauth", "github-app-token"]
+paths = ['''\.tflite$''']
